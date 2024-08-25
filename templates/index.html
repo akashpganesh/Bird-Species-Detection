@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bird Species Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <form id="uploadForm">
-        <input type="file" id="imageInput" name="image" accept="image/*" placeholder="upload" required>
-        <input type="submit" value="Submit">
-    </form>
+    <header>
+        <h1>Bird Detector</h1>
+    </header>
+    <div class="body">
+        <div class="container">
+            <div class="upload-area" id="uploadArea">
+                <p>Drag & Drop or Click to Upload an Image</p>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
+            <img id="imagePreview" class="image-preview" alt="Image Preview">
+            <div class="loading-spinner" id="loadingSpinner">
+                <div class="spinner"></div>
+            </div>
+            <h2 id="result"></h2>
+        </div>
+    </div>
 </body>
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 </html>

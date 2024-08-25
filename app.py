@@ -33,7 +33,7 @@ def predict_bird_species(img_path, confidence_threshold=0.5):
         confidence = np.max(prediction)
 
         if confidence < confidence_threshold:
-            return f"The input image is likely not a bird. Confidence: {confidence:.2f}", False
+            return f"Can't Identify the Bird", False
         else:
             return predicted_class, True
 
