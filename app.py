@@ -20,14 +20,15 @@ if not os.path.exists(UPLOAD_FOLDER):
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER  # Set UPLOAD_FOLDER in the app configuration
 
+model = load_model('final_model_epoch_11.keras')
+
 def predict_bird_species(img_path, confidence_threshold=0.5):
     try:
         img = image.load_img(img_path, target_size=(224, 224))
         img_array = image.img_to_array(img)
         img_array = np.expand_dims(img_array, axis=0)
         img_array /= 255.
-
-        model = load_model('final_model_epoch_11.keras')
+        
         prediction = model.predict(img_array)
         predicted_class = np.argmax(prediction, axis=1)[0]
         confidence = np.max(prediction)
