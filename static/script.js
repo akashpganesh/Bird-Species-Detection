@@ -61,7 +61,7 @@ async function handleFileUpload() {
         const result = await response.json();
         loadingSpinner.style.display = 'none';
         resultText.textContent = `Species: ${result.species}`;
-        console.log(result)
+        console.log(result);
     } catch (error) {
         loadingSpinner.style.display = 'none';
         resultText.textContent = 'Error identifying species. Please try again.';
