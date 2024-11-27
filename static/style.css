@@ -2,16 +2,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    background: url("{{ url_for('static', filename='background.jpg') }}") no-repeat center center fixed;
+    background: url("background.jpg") no-repeat center center fixed;
     background-size: cover; /* Ensures the image covers the entire body */
     color: #333;
 }
 
 header {
-    position: sticky;
-    top: 0;
-    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for the header */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0); /* Slight transparency for the header */
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
     height: 75px;
     display: flex;
     align-items: center;

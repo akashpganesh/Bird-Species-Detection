@@ -60,7 +60,7 @@ async function handleFileUpload() {
 
         const result = await response.json();
         loadingSpinner.style.display = 'none';
-        resultText.textContent = `Species: ${result.species}`;
+        resultText.innerHTML = `Species: ${result.species} <br> Confidence: ${result.confidence.toFixed(2)}%`; // Added confidence
         console.log(result);
     } catch (error) {
         loadingSpinner.style.display = 'none';
